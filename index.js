@@ -5,7 +5,7 @@ function addLine(dataUser){
 
   var tr = document.createElement("tr");
   
-  tr.innerHTML = `
+  document.querySelector("#table-users").innerHTML = `
               <tr>
                 <td><img src="dist/img/user1-128x128.jpg" 
                          alt="User Image" class="img-circle img-sm"></td>
@@ -21,8 +21,6 @@ function addLine(dataUser){
                 </td>
               </tr>
   `;
-
-  document.querySelector("#table-users").appendChild(tr);
 }
 
 
