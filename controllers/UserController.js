@@ -50,9 +50,13 @@ class UserController {
         reject(e);
       }
 
-      fileReader.readAsDataURL(file);
-
-      });
+      if (file) {
+        fileReader.readAsDataURL(file);
+      } else {
+        resolve('dist/img/boxed-bg.jpg');
+      }
+      
+    });
 
   }
 
