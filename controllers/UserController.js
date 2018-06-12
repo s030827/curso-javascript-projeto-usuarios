@@ -68,10 +68,12 @@ class UserController {
 
       if (field.name == "gender"){
 
-        if (field.checked) { 
-          user[field.name] = field.value;
-        }
-      } else { 
+          if (field.checked) { 
+            user[field.name] = field.value;
+          }
+        } else if (field.name == "admin") {
+          user[field.name] = field.checked; 
+        } else { 
           user[field.name] = field.value;
       }
   });
@@ -98,7 +100,7 @@ class UserController {
                            alt="User Image" class="img-circle img-sm"></td>
                   <td>${dataUser.name}</td>
                   <td>${dataUser.email}</td>
-                  <td>${dataUser.admin}</td>
+                  <td>${(dataUser.admin) ? "Sim" : "Não"}</td>
                   <td>${dataUser.birth}</td>
                   <td>
                     <button type="button" 
